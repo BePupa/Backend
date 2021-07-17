@@ -48,6 +48,7 @@ public class TituloController {
         if(oldTitulo.isPresent()){
             Titulo titulo = oldTitulo.get();
             titulo.setNome(newTitulo.getNome());
+            titulo.setDescricao(newTitulo.getDescricao());
             _tituloRepository.save(titulo);
             return new ResponseEntity<Titulo>(titulo, HttpStatus.OK);
         }
